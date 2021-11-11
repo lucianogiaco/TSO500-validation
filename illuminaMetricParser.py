@@ -16,7 +16,7 @@ class metrics_fields:
 
 
 		self.header = meArray[3:6]
-		self.runQCmetrics = meArray[8:12]
+		self.runQCmetrics = meArray[8:13]
 		self.analysisStatus = meArray[14:18]
 		self.DnaLibraryQC = meArray[20:23]
 		self.DnaSVandTmbQC = meArray[25:29]
@@ -76,7 +76,28 @@ def main(inputFile):
 	mefile.close()
 
 	MetricsField = metrics_fields(meArray)
-	print(MetricsField.getDnaExpanded())
+
+	# parserRunQCmetrics
+	k = MetricsField.getRunQCmetrics()[0]
+	k = str.strip(k)
+	k = k.strip('[')
+	k = k.strip(']')
+	k = k.replace(' ', '')
+	
+
+	for f in MetricsField.getRunQCmetrics()[2:]:
+		
+		f = str.strip(f)
+		s = f.split('\t')
+		gl = round(float(s[1]), 1)
+		val = round(float(s[3]), 1)
+		if val >= gl:
+			print(1)
+		else:
+			print(0)
+
+
+
 	
 	
 
