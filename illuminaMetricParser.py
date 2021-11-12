@@ -18,13 +18,13 @@ class metrics_fields:
 		self.header = meArray[3:6]
 		self.runQCmetrics = meArray[8:13]
 		self.analysisStatus = meArray[14:18]
-		self.DnaLibraryQC = meArray[20:23]
-		self.DnaSVandTmbQC = meArray[25:29]
-		self.DnaMsiQC = meArray[31:33]
-		self.DnaCnvQC = meArray[35:38]
-		self.DnaExpanded = meArray[40:55]
-		self.RnaLibraryQC = meArray[57:61]
-		self.RnaExpanded = meArray[63:68]
+		self.DnaLibraryQC = meArray[20:24]
+		self.DnaSVandTmbQC = meArray[25:30]
+		self.DnaMsiQC = meArray[31:34]
+		self.DnaCnvQC = meArray[35:39]
+		self.DnaExpanded = meArray[40:56]
+		self.RnaLibraryQC = meArray[57:62]
+		self.RnaExpanded = meArray[63:69]
 		
 	def getHeader(self):
 		return self.header
@@ -97,9 +97,21 @@ def main(inputFile):
 			print(0)
 
 
+	# parserDnaLibraryQC contamination
+	k = MetricsField.getDnaLibraryQC()[0]
+	k = str.strip(k)
+	k = k.strip('[')
+	k = k.strip(']')
+	k = k.replace(' ', '')
+	k = k.replace('\t', '')
+	print(k)
 
 	
-	
+	for f in MetricsField.getDnaLibraryQC()[1:]:
+		
+		f = str.strip(f)
+		s = f.split('\t')
+		print(s)
 
 
 
