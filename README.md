@@ -10,12 +10,12 @@ In the context of the Profiling Program FPG500, this project aims to evaluate th
 
 ## Content
 
-1. xxx_CombinedVariantOutput.tsv: Example of data output of Illumina local app
-2. Samples.md: Recipe and file used for coverage and annotation
-3. sample_summary.xlsx: List of samples used in the sequencing validation
-4. table.tab: Quality metrics table of all samples sequenced
-5. illuminaMetricParser.py: script used to generate the table.tab file
-6. trusight-oncology-500-xxx.pdf: Illumina guidelines of local app
+1. **xxx_CombinedVariantOutput.tsv**: Example of data output of Illumina local app
+2. **Samples.md**: Recipe and file used for coverage and annotation
+3. **sample_summary.xlsx**: List of samples used in the sequencing validation
+4. **table.tab**: Quality metrics table of all samples sequenced
+5. **illuminaMetricParser.py**: script used to generate the table.tab file
+6. **trusight-oncology-500-xxx.pdf**: Illumina guidelines of local app
 
 ## Contributing
 Bioinformatics core Facility Research - Gemelli Science and Technology Park - Fondazione Policlinico Universitario A.Gemelli IRCCS
