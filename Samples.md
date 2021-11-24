@@ -15,7 +15,14 @@ ln -s /data/novaseq/Diagnostic/NovaSeq/Results/210729_A01423_0009_AH33WGDRXY/Log
 ln -s /data/novaseq_results/211022_A01423_0010_AHGYFYDRXY_sequencerOutput/Logs_Intermediates/StitchedRealigned/*/*.bam* ./
 ```
 
-I risultati sono in `/data/novaseq_results/research/validation/bam/results/coverage/dna/cnv`
+Aggiunti bam della run 211111_A01423_0011_AHH2Y2DRXY in `/data/novaseq_results/research/validation/bam/dna/snv/211111_A01423_0011_AHH2Y2DRXY`
+
+```
+ln -s /data/novaseq_results/211111_A01423_0011_AHH2Y2DRXY/Logs_Intermediates/StitchedRealigned/*/*.bam* ./
+```
+
+
+I risultati sono in `/data/novaseq_results/research/validation/bam/results/coverage/dna/snv`
 
 
 
@@ -29,13 +36,20 @@ ln -s /data/novaseq/Diagnostic/NovaSeq/Results/210729_A01423_0009_AH33WGDRXY/Log
 
 ln -s /data/novaseq_results/211022_A01423_0010_AHGYFYDRXY_sequencerOutput/Logs_Intermediates/DnaRealignment/*/*.bam* ./
 ```
+Aggiunti bam della run 211111_A01423_0011_AHH2Y2DRXY in `/data/novaseq_results/research/validation/bam/dna/cnv/211111_A01423_0011_AHH2Y2DRXY`
 
-I risultati sono in `/data/novaseq_results/research/validation/bam/results/coverage/dna/cnv`
+
+```
+ln -s /data/novaseq_results/211111_A01423_0011_AHH2Y2DRXY/Logs_Intermediates/DnaRealignment/*/*.bam* ./
+```
+
 
 Scritp utilizzato:
 
 `/data/novaseq_results/research/validation/bam/results/coverage/dna/cnv/cnv_coverage.sh`
 
+
+I risultati sono in `/data/novaseq_results/research/validation/bam/results/coverage/dna/cnv`
 
 ### Coverage RNA
 
@@ -51,11 +65,18 @@ ln -s /data/novaseq/Diagnostic/NovaSeq/Results/210729_A01423_0009_AH33WGDRXY/Log
 ln -s /data/novaseq_results/211022_A01423_0010_AHGYFYDRXY_sequencerOutput/Logs_Intermediates/RnaMarkDuplicates/*/*.bam* ./
 ```
 
+Aggiunti bam della run 211111_A01423_0011_AHH2Y2DRXY in `/data/novaseq_results/research/validation/bam/rna/211111_A01423_0011_AHH2Y2DRXY`
+
+```
+ln -s /data/novaseq_results/211111_A01423_0011_AHH2Y2DRXY/Logs_Intermediates/RnaMarkDuplicates/*/*.bam* ./
+```
+
 I risultati sono in `/data/novaseq_results/research/validation/bam/results/coverage/rna`
 
 Scritp utilizzato:
 
 `/data/novaseq_results/research/validation/bam/results/coverage/rna/rna_coverage.sh`
+
 
 
 
@@ -79,6 +100,13 @@ ln -s /data/novaseq_results/211022_A01423_0010_AHGYFYDRXY_sequencerOutput/Result
 ln -s /data/novaseq_results/211022_A01423_0010_AHGYFYDRXY_sequencerOutput/Results/*/*DNA_Merged*.vcf ./
 ```
 
+
+Aggiunta la run 211111_A01423_0011_AHH2Y2DRXY in `/data/novaseq_results/research/validation/vcf/dna/snv/211111_A01423_0011_AHH2Y2DRXY`
+
+```
+ln -s /data/novaseq_results/211111_A01423_0011_AHH2Y2DRXY/Results/*_DNA*/*MergedSmallVariants.genome.vcf ./
+```
+
 I risultati sono in `/data/novaseq_results/research/validation/vcf/results/dna/snv`
 
 Scritp utilizzato:
@@ -96,6 +124,12 @@ ln -s /data/novaseq/Diagnostic/NovaSeq/Results/210715_A01423_0008_AH35CWDRXY/Res
 ln -s /data/novaseq/Diagnostic/NovaSeq/Results/210729_A01423_0009_AH33WGDRXY/Results/*/*_DNA/*_DNA_CopyNumberVariants.vcf ./
 
 ln -s /data/novaseq_results/211022_A01423_0010_AHGYFYDRXY_sequencerOutput/Results/*/*_DNA/*_DNA_CopyNumberVariants.vcf ./
+```
+
+Aggiunta la run 211111_A01423_0011_AHH2Y2DRXY in `/data/novaseq_results/research/validation/vcf/dna/cnv/211111_A01423_0011_AHH2Y2DRXY`
+
+```
+ln -s /data/novaseq_results/211111_A01423_0011_AHH2Y2DRXY/Results/*_DNA*/*CopyNumberVariants.vcf ./
 ```
 
 I risultati sono in `/data/novaseq_results/research/validation/vcf/results/dna/cnv`
@@ -116,6 +150,12 @@ ln -s /data/novaseq/Diagnostic/NovaSeq/Results/210715_A01423_0008_AH35CWDRXY/Res
 ln -s /data/novaseq/Diagnostic/NovaSeq/Results/210729_A01423_0009_AH33WGDRXY/Results/*/*_RNA/*.vcf ./
 
 ln -s /data/novaseq_results/211022_A01423_0010_AHGYFYDRXY_sequencerOutput/Results/*/*_RNA/*.vcf ./
+```
+
+Aggiunta la run 211111_A01423_0011_AHH2Y2DRXY in `/data/novaseq_results/research/validation/vcf/rna/211111_A01423_0011_AHH2Y2DRXY`
+
+```
+ln -s /data/novaseq_results/211111_A01423_0011_AHH2Y2DRXY/Results/*_RNA*/*.vcf ./
 ```
 
 I risultati sono in `/data/novaseq_results/research/validation/vcf/results/rna`
