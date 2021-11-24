@@ -18,7 +18,9 @@ In the context of the Profiling Program FPG500, this project aims to evaluate th
 6. **trusight-oncology-500-xxx.pdf**: Illumina guidelines of local app
 
 ## Contributing
-Bioinformatics core Facility Research - Gemelli Science and Technology Park - Fondazione Policlinico Universitario A.Gemelli IRCCS
+Bioinformatics core Facility Research 
+Gemelli Science and Technology Park 
+Fondazione Policlinico Universitario A.Gemelli IRCCS
 
 ## Authors and acknowledgment
 Luciano Giaco' PhD
