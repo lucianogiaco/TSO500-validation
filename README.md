@@ -26,7 +26,9 @@ Fondazione Policlinico Universitario A.Gemelli IRCCS
 
 ## Authors and acknowledgment
 Luciano Giaco' PhD
+
 Fernando Palluzzi PhD
+
 Davide Guido PhD
 
 ## License
