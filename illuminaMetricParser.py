@@ -62,9 +62,9 @@ def existingFile(inputFile):
 	if os.path.isfile(inputFile) is True:
 		return(True)
 	else:
-		print("[WARNING] "+inputFile)
-		print("[WARNING] The file '"+inputFile+"' does not exist")
-		print("[INFO] Exit")
+		#print("[WARNING] "+inputFile)
+		#print("[WARNING] The file '"+inputFile+"' does not exist")
+		#print("[INFO] Exit")
 		os.sys.exit()
 
 def get_contaminatio(DNA_metrics):
@@ -75,9 +75,9 @@ def get_contaminatio(DNA_metrics):
 	k = k.strip(']')
 	k = k.replace(' ', '')
 	k = k.replace('\t', '')
-	print('[INFO] Parsing metrics')
-	print(k)
-	print('\n')
+	#print('[INFO] Parsing metrics')
+	#print(k)
+	#print('\n')
 
 		
 	samples = DNA_metrics[1]
@@ -102,19 +102,19 @@ def get_contaminatio(DNA_metrics):
 		tSmp = samples[i]
 		tScr = score[i]
 		tPvl = pval[i]
-		print(tSmp)
+		#print(tSmp)
 
 		if tScr == 'NA' and tPvl == 'NA':
 			main_dict[tSmp] = ['NA', 'NA', 'NA']
-			print(tScr)
-			print(tPvl)
-			print('\n')
+			#print(tScr)
+			#print(tPvl)
+			#print('\n')
 		else:
 			tScr = int(tScr)
 			tPvl = float(tPvl)
-			print(tScr)
-			print(tPvl)
-			print('\n')
+			#print(tScr)
+			#print(tPvl)
+			#print('\n')
 			if tScr <= 3106:
 				main_dict[tSmp] = [tScr, tPvl, 1]
 				next
@@ -134,30 +134,30 @@ def	parserDnaSVandTmbQC(TMB_metrics, main_dict):
 	k = k.strip(']')
 	k = k.replace(' ', '')
 	k = k.replace('\t', '')
-	print('[INFO] Parsing metrics')
-	print(k)
-	print('\n')
+	#print('[INFO] Parsing metrics')
+	#print(k)
+	#print('\n')
 
 	samples = TMB_metrics[1]
 	samples = str.strip(samples)
 	samples = samples.split('\t')
 	samples = samples[3:]
-	print(samples)
+	#print(samples)
 	median_size = TMB_metrics[2]
 	median_size = str.strip(median_size)
 	median_size = median_size.split('\t')
 	median_size = median_size[3:]
-	print(median_size)
+	#print(median_size)
 	median_ex_cover = TMB_metrics[3]
 	median_ex_cover = str.strip(median_ex_cover)
 	median_ex_cover = median_ex_cover.split('\t')
 	median_ex_cover = median_ex_cover[3:]
-	print(median_ex_cover)
+	#print(median_ex_cover)
 	pct_ex_50x = TMB_metrics[4]
 	pct_ex_50x = str.strip(pct_ex_50x)
 	pct_ex_50x = pct_ex_50x.split('\t')
 	pct_ex_50x = pct_ex_50x[3:]
-	print(pct_ex_50x)
+	#print(pct_ex_50x)
 
 
 	i = 0
@@ -167,13 +167,13 @@ def	parserDnaSVandTmbQC(TMB_metrics, main_dict):
 		tMsz = median_size[i]
 		tMcv = median_ex_cover[i]
 		tPce = pct_ex_50x[i]
-		print(tSmp)
+		#print(tSmp)
 
 		if tMsz == 'NA' and tMcv == 'NA' and tPce == 'NA':
-			print(tMsz)
-			print(tMcv)
-			print(tPce)
-			print('\n')
+			#print(tMsz)
+			#print(tMcv)
+			#print(tPce)
+			#print('\n')
 			v = main_dict[tSmp]
 			v = v + ['NA','NA','NA', 'NA','NA','NA']
 			main_dict[tSmp] = v
@@ -181,10 +181,10 @@ def	parserDnaSVandTmbQC(TMB_metrics, main_dict):
 			tMsz = int(tMsz)
 			tMcv = int(tMcv)
 			tPce = float(tPce)
-			print(tMsz)
-			print(tMcv)
-			print(tPce)
-			print('\n')
+			#print(tMsz)
+			#print(tMcv)
+			#print(tPce)
+			#print('\n')
 			v = main_dict[tSmp]
 			v = v + [tMsz, tMcv, tPce]
 			main_dict[tSmp] = v
@@ -225,39 +225,39 @@ def get_msi(MSI_metrics, main_dict):
 	k = k.strip(']')
 	k = k.replace(' ', '')
 	k = k.replace('\t', '')
-	print('[INFO] Parsing metrics')
-	print(k)
-	print('\n')
+	#print('[INFO] Parsing metrics')
+	#print(k)
+	#print('\n')
 
 	samples = MSI_metrics[1]
 	samples = str.strip(samples)
 	samples = samples.split('\t')
 	samples = samples[3:]
-	print(samples)
+	#print(samples)
 	unst_msi = MSI_metrics[2]
 	unst_msi = str.strip(unst_msi)
 	unst_msi = unst_msi.split('\t')
 	unst_msi = unst_msi[3:]
-	print(unst_msi)
+	#print(unst_msi)
 
 	i = 0
 	l = len(samples)
 	while i < l:
 		tSmp = samples[i]
 		tMsi = unst_msi[i]
-		print(tSmp)
+		#print(tSmp)
 
 		if tMsi == 'NA':
-			print(tMsi)
-			print('\n')
+			#print(tMsi)
+			#print('\n')
 			v = main_dict[tSmp]
 			v = v + ['NA', 'NA']
 			main_dict[tSmp] = v
 
 		else:
 			tMsi = int(tMsi)
-			print(tMsi)
-			print('\n')
+			#print(tMsi)
+			#print('\n')
 			v = main_dict[tSmp]
 			v = v + [tMsi]
 			main_dict[tSmp] = v
@@ -280,9 +280,9 @@ def get_CNV(CNV_metrics, main_dict):
 	k = k.strip(']')
 	k = k.replace(' ', '')
 	k = k.replace('\t', '')
-	print('[INFO] Parsing metrics')
-	print(k)
-	print('\n')
+	#print('[INFO] Parsing metrics')
+	#print(k)
+	#print('\n')
 
 	samples = CNV_metrics[1]
 	samples = str.strip(samples)
@@ -305,12 +305,12 @@ def get_CNV(CNV_metrics, main_dict):
 		tSmp = samples[i]
 		tCvm = cov_mad[i]
 		tMdb = median_bin[i]
-		print(tSmp)
+		#print(tSmp)
 
 		if tCvm == 'NA' and tMdb == 'NA':
-			print(tCvm)
-			print(tMdb)
-			print('\n')
+			#print(tCvm)
+			#print(tMdb)
+			#print('\n')
 			v = main_dict[tSmp]
 			v = v + ['NA', 'NA', 'NA', 'NA']
 			main_dict[tSmp] = v
@@ -318,9 +318,9 @@ def get_CNV(CNV_metrics, main_dict):
 		else:
 			tCvm = float(tCvm)
 			tMdb = float(tMdb)
-			print(tCvm)
-			print(tMdb)
-			print('\n')
+			#print(tCvm)
+			#print(tMdb)
+			#print('\n')
 			v = main_dict[tSmp]
 			v = v + [tCvm, tMdb]
 			main_dict[tSmp] = v
@@ -351,30 +351,30 @@ def get_rnaQCmetrics(RNA_mestrics, main_dict):
 	k = k.strip(']')
 	k = k.replace(' ', '')
 	k = k.replace('\t', '')
-	print('[INFO] Parsing metrics')
-	print(k)
-	print('\n')
+	#print('[INFO] Parsing metrics')
+	#print(k)
+	#print('\n')
 
 	samples = RNA_mestrics[1]
 	samples = str.strip(samples)
 	samples = samples.split('\t')
 	samples = samples[3:]
-	print(samples)
+	#print(samples)
 	median_cv_size = RNA_mestrics[2]
 	median_cv_size = str.strip(median_cv_size)
 	median_cv_size = median_cv_size.split('\t')
 	median_cv_size = median_cv_size[3:]
-	print(median_cv_size)
+	#print(median_cv_size)
 	total_on_target_size = RNA_mestrics[3]
 	total_on_target_size = str.strip(total_on_target_size)
 	total_on_target_size = total_on_target_size.split('\t')
 	total_on_target_size = total_on_target_size[3:]
-	print(total_on_target_size)
+	#print(total_on_target_size)
 	median_ins_size = RNA_mestrics[4]
 	median_ins_size = str.strip(median_ins_size)
 	median_ins_size = median_ins_size.split('\t')
 	median_ins_size = median_ins_size[3:]
-	print(median_ins_size)
+	#print(median_ins_size)
 
 	i = 0
 	l = len(samples)
@@ -383,13 +383,13 @@ def get_rnaQCmetrics(RNA_mestrics, main_dict):
 		tMsz = median_cv_size[i]
 		tMcv = total_on_target_size[i]
 		tPce = median_ins_size[i]
-		print(tSmp)
+		#print(tSmp)
 
 		if tMsz == 'NA' and tMcv == 'NA' and tPce == 'NA':
-			print(tMsz)
-			print(tMcv)
-			print(tPce)
-			print('\n')
+			#print(tMsz)
+			#print(tMcv)
+			#print(tPce)
+			#print('\n')
 			v = main_dict[tSmp]
 			v = v + ['NA','NA','NA','NA','NA','NA']
 			main_dict[tSmp] = v
@@ -397,10 +397,10 @@ def get_rnaQCmetrics(RNA_mestrics, main_dict):
 			tMsz = float(tMsz)
 			tMcv = int(tMcv)
 			tPce = int(tPce)
-			print(tMsz)
-			print(tMcv)
-			print(tPce)
-			print('\n')
+			#print(tMsz)
+			#print(tMcv)
+			#print(tPce)
+			#print('\n')
 			v = main_dict[tSmp]
 			v = v + [tMsz, tMcv, tPce]
 			main_dict[tSmp] = v
@@ -439,19 +439,19 @@ def get_dna_exp(DNA_metrics_exp, main_dict):
 	k = k.strip(']')
 	k = k.replace(' ', '')
 	k = k.replace('\t', '')
-	print('[INFO] Parsing metrics')
-	print(k)
-	print('\n')
+	#print('[INFO] Parsing metrics')
+	#print(k)
+	#print('\n')
 	samples = DNA_metrics_exp[1]
 	samples = str.strip(samples)
 	samples = samples.split('\t')
 	samples = samples[3:]
-	print(samples)
+	#print(samples)
 	dna_exp = DNA_metrics_exp[2:]
 	# dna_exp = str.strip(dna_exp)
 	# dna_exp = dna_exp.split('\t')
 	# dna_exp = dna_exp[3:]
-	print(dna_exp)
+	#print(dna_exp)
 	i = 0
 	l = len(dna_exp)
 	while i < l:
@@ -459,7 +459,7 @@ def get_dna_exp(DNA_metrics_exp, main_dict):
 		tDexp = dna_exp[i].split('\t')
 		tDexp[-1] = str.strip(tDexp[-1])
 
-		#print(tDexp)
+		##print(tDexp)
 		arr_to_app = []
 		c = 0
 		for t in tDexp[3:]:
@@ -467,7 +467,7 @@ def get_dna_exp(DNA_metrics_exp, main_dict):
 			v = main_dict[tSmp]
 			v = v + [t]
 			main_dict[tSmp] = v
-			# print(t)
+			# #print(t)
 			c = c + 1
 
 		i = i + 1
@@ -475,7 +475,7 @@ def get_dna_exp(DNA_metrics_exp, main_dict):
 	return(main_dict)
 
 def write_out(main_dict):
-	#print('\t'.join(header))
+	##print('\t'.join(header))
 	out = open('table.tab', 'a')
 
 	for k, v in main_dict.items():
@@ -502,23 +502,23 @@ def main(inputFile):
 	DNA_metrics = MetricsField.getDnaLibraryQC()
 
 	main_dict = get_contaminatio(DNA_metrics)
-	print(main_dict)
-
+	#print(main_dict)
+	# os.sys.exit()
 	TMB_metrics = MetricsField.getDnaSVandTmbQC()
 	main_dict = parserDnaSVandTmbQC(TMB_metrics, main_dict)
-	print(main_dict)
+	#print(main_dict)
 
 	MSI_metrics = MetricsField.getDnaMsiQC()
 	main_dict = get_msi(MSI_metrics, main_dict)
-	print(main_dict)
+	#print(main_dict)
 
 	CNV_metrics = MetricsField.getDnaCnvQC()
 	main_dict = get_CNV(CNV_metrics, main_dict)
-	print(main_dict)
+	#print(main_dict)
 
 	RNA_mestrics = MetricsField.getRnaLibraryQC()
 	main_dict = get_rnaQCmetrics(RNA_mestrics, main_dict)
-	print(main_dict)
+	#print(main_dict)
 
 	DNA_metrics_exp = MetricsField.getDnaExpanded()
 	main_dict = get_dna_exp(DNA_metrics_exp, main_dict)
@@ -537,9 +537,9 @@ def main(inputFile):
 	for f in MetricsField.getRunQCmetrics()[2:]:
 		
 		f = str.strip(f)
-		print(f)
+		#print(f)
 		s = f.split('\t')
-		print(s)
+		#print(s)
 		gl = round(float(s[1]), 1)
 		val = round(float(s[3]), 1)
 		if val >= gl:
@@ -593,7 +593,8 @@ if __name__ == '__main__':
 	metrics = ['210715_A01423_0008_AH35CWDRXY.tsv',
 				'210729_A01423_0009_AH33WGDRXY.tsv',
 				'211022_A01423_0010_AHGYFYDRXY.tsv',
-				'211111_A01423_0011_AHH2Y2DRXY.tsv']
+				'211111_A01423_0011_AHH2Y2DRXY.tsv',
+				'211122_A01423_0012_AH2YWCDRXY.tsv']
 
 	main_dict_final = dict()
 	out = open('table.tab', 'w')
@@ -603,11 +604,13 @@ if __name__ == '__main__':
 	for inputFile in metrics:
 		root, ext = os.path.splitext(inputFile)
 		main_dict = main(inputFile)
+		#print(main_dict)
 		for k, v in main_dict.items():
 			v = v + [root]
 			main_dict[k] = v
 		# main_dict_final = {main_dict_final, main_dict}
 		write_out(main_dict)
+		print(len(main_dict.keys()))
 
 
 	
